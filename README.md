@@ -36,5 +36,28 @@
 -	Comments function 
     - user can write the comments for more information without page transition.
 
+##Catalog design
 
+
+
+##Table definition
+
+##Screen transition diagram
+
+
+##Screen wire frame
+
+
+##Scheduled use Gem
+
+- Devise
+- carrierwave 
+- mini_magick
+- ransack
+- kaminari
+- bcrypt
+- rspec-rails
+- letter_opener
+- better_errors
+- puma 
 
