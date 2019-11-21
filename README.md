@@ -14,6 +14,20 @@
 
 **Functions List**
 
+-	Create and save post 
+-	Post list
+-	Edit/delete post
+-	Post search
+     - search by names....etc
+-	Pagination 
+-	Labels
+-	Login function 
+        - first name, second name, email, location, password and more
+-	Topic function 
+-	Categories function 
+-	My page function 
+-	Post participation function 
+-	Comments function 
 
 
 
