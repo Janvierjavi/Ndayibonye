@@ -36,19 +36,19 @@
 -	Comments function 
     - user can write the comments for more information without page transition.
 
-##Catalog design
+## Catalog design 
 
 
 
-##Table definition
+## Table definition
 
-##Screen transition diagram
-
-
-##Screen wire frame
+## Screen transition diagram
 
 
-##Scheduled use Gem
+## Screen wire frame
+
+
+## Scheduled use Gem
 
 - Devise
 - carrierwave 
