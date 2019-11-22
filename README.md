@@ -26,7 +26,7 @@
 -	Post search
      - search by names....etc
 -	Pagination 
--	Labels
+-   User signup functon
 -	Login function 
     - first name, second name, email, location, password and more are needed
 -	Categories function 
@@ -38,9 +38,11 @@
 
 ## Catalog design 
 
-
+[https://docs.google.com/spreadsheets/d/12lYGEoFnI775ombgbJHp990WMD0OwSe6e-d56kkxgeQ/edit?usp=sharing]
 
 ## Table definition
+
+[https://docs.google.com/spreadsheets/d/1HIyjW8i1h4jQP45onMNtuIheXCVf_c77ju6O0SA4Seg/edit?usp=sharing]
 
 ## Screen transition diagram
 
@@ -60,4 +62,5 @@
 - letter_opener
 - better_errors
 - puma 
+- Active Admin and RailsAdmin
 
