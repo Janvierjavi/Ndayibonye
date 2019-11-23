@@ -68,4 +68,6 @@
 - better_errors
 - puma 
 - Active Admin and RailsAdmin
+- comment function
+- **i will use heroku** 
 
