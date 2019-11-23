@@ -44,8 +44,13 @@
 
 [https://docs.google.com/spreadsheets/d/1HIyjW8i1h4jQP45onMNtuIheXCVf_c77ju6O0SA4Seg/edit?usp=sharing]
 
+## ER diagram
+
+[https://drive.google.com/file/d/1QhVgZw1pl_ikgamiKtzjTKhs7sqYM_Iq/view?usp=sharing]
+
 ## Screen transition diagram
 
+[https://drive.google.com/file/d/1eapEb0JorEIfriT26BGuAtaDj7_xMwzQ/view?usp=sharing]
 
 ## Screen wire frame
 
