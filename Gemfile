@@ -64,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #devise gem
 
 gem 'devise'
+# search 
+gem 'ransack'
+# pagination
+gem 'kaminari'

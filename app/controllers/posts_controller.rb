@@ -2,7 +2,13 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @search = Post.search(params[:q])
+    if params[:q]
+      @posts=@search.result.order(:content).page(params[:page]).per(2)
+    else
+      @posts = Post.all.order("created_at DESC").page(params[:page])
+    
+    end
   end
 
   def show

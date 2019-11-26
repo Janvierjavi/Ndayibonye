@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
+<%=search_form_for @search do |f| %>
+  <div class="field">
+<%= f.label :content_cont, "name contains" %>
+<%= f.text_field :content_cont %>
+  </div>
+  <div class="actions"> <%= f.submit "search" %></div> 
+<% end %>
 
 <h1>Posts</h1>
 
@@ -29,3 +36,6 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+
+
+<%= paginate @posts %>
