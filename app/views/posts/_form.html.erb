@@ -10,20 +10,18 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
+  <%= form.label :tittle %>
+  <%= form.text_field :tittle %>
+</div>
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+</div>
+ 
   <div class="field">
     <%= form.label :categories %>
-    <%= form.number_field :categories %>
+    <%= form.select :categories, ['', 'I.D', 'Driving Lisence', 'Diplome' ] %>
   </div>
 
   <div class="actions">
