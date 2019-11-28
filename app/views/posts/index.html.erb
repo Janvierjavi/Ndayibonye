@@ -1,37 +1,72 @@
 <p id="notice"><%= notice %></p>
-<%=search_form_for @search do |f| %>
-  <div class="field">
-<%= f.label :content_cont, "name contains" %>
-<%= f.text_field :content_cont %>
+
+<!--::review_part start::-->
+<section class="special_cource"  >
+    <div class="container " > 
+
+    <!--::search part start::-->
+    <%=search_form_for @search do |f| %>
+    <div class=" h-100 sticky-top">
+    <div class="d-flex justify-content-center h-100">
+      <div class="searchbar field">
+      <%= f.text_field :content_or_categories_cont, class:'search_input' %>
+       
+      <div class="actions search_icon"> <%= f.submit class:"fas fa-search" %></div> 
+      </div>
+    </div>
   </div>
-  <div class="actions"> <%= f.submit "search" %></div> 
-<% end %>
+   
+  <% end %>
 
-<h1>Posts</h1>
+  <!--::search end::-->
+        <div class="row justify-content-center mx-auto"> 
+            <div class="col-xl-5">
+                <div class="section_tittle text-center">
+                    <p>popular courses</p>
+                    <h2>Special Courses</h2>
+                </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tittle</th>
-      <th>Content</th>
-      <th>Categories</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            </div> 
+            
+            
+        <div class="row " >
+        <% @posts.each do |post| %> 
+            <div class="col-sm-6 col-lg-4 ">
+            
+                <div class="single_special_cource">
+              
+                <%= image_tag("special_cource_1 - Copy.png", class: "pecial_img", width:"360", height:"200") %>
+                 
+                    <div class="special_cource_text">
+                        <a href="course-details.html" class="btn_4">Web Development</a>
+                        <h4>Cat:<%= post.categories %></h4>
+                        <a href="course-details.html"><h3><%= post.tittle %></h3></a>
+                        <p><%= post.content %>
+                        <%= link_to 'Show', post %>
+                        <%= link_to 'Edit', edit_post_path(post) %>
+                        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.tittle %></td>
-        <td><%= post.content %></td>
-        <td><%= post.categories %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                        </p>
+                         
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <% end %>
+            
+            </div>
+        </div>
+       
+    
+        </div>
+        </div>
+        </div>
+        
+        </div>
+        </section>
+<!--::blog_part end::-->
+
 
 <br>
 
