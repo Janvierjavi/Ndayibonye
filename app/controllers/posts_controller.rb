@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
   def index
     @search = Post.search(params[:q])
     if params[:q]
@@ -54,6 +53,6 @@ class PostsController < ApplicationController
 
     
     def post_params
-      params.require(:post).permit(:tittle, :user_id, :content, :categories)
+      params.require(:post).permit(:tittle, :image, :user_id, :content, :categories)
     end
 end

@@ -1,70 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<!--::review_part start::-->
-<section class="special_cource"  >
-    <div class="container " > 
+<div class="container"> <%=search_form_for @search do |f| %>
+                          
+    <div class="input-group">
+    <%= f.text_field :content_or_categories_cont, class:'form-control col-3 border-secondary py-2' %>
+     <%= f.submit  %> 
+</div>
+ <% end %> </div>
 
-    <!--::search part start::-->
-    <%=search_form_for @search do |f| %>
-    <div class=" h-100 sticky-top">
-    <div class="d-flex justify-content-center h-100">
-      <div class="searchbar field">
-      <%= f.text_field :content_or_categories_cont, class:'search_input' %>
-       
-      <div class="actions search_icon"> <%= f.submit class:"fas fa-search" %></div> 
-      </div>
-    </div>
-  </div>
-   
-  <% end %>
-
-  <!--::search end::-->
-        <div class="row justify-content-center mx-auto"> 
-            <div class="col-xl-5">
-                <div class="section_tittle text-center">
-                    <p>popular courses</p>
-                    <h2>Special Courses</h2>
-                </div>
-
-            </div> 
-            
-            
-        <div class="row " >
-        <% @posts.each do |post| %> 
-            <div class="col-sm-6 col-lg-4 ">
-            
-                <div class="single_special_cource">
-              
-                <%= image_tag("special_cource_1 - Copy.png", class: "pecial_img", width:"360", height:"200") %>
-                 
-                    <div class="special_cource_text">
-                        <a href="course-details.html" class="btn_4">Web Development</a>
-                        <h4>Cat:<%= post.categories %></h4>
-                        <a href="course-details.html"><h3><%= post.tittle %></h3></a>
-                        <p><%= post.content %>
+  <div class="card-columns">
+  
+  <% @posts.each do |post| %> 
+  <div class="card">
+  <%= image_tag(post.image , class:'card-img-top') if post.image.attached? %>
+  
+  <div class="card-body">
+    <h5 class="card-title">Cat:<%= post.categories %></h5>
+    <p class="card-text">
+    <%= post.content %> </p>
                         <%= link_to 'Show', post %>
                         <%= link_to 'Edit', edit_post_path(post) %>
                         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-                        </p>
-                         
-                    </div>
-                    
-                </div>
-                
-            </div>
-            <% end %>
-            
-            </div>
-        </div>
-       
-    
-        </div>
-        </div>
-        </div>
-        
-        </div>
-        </section>
+</div>
+  <div class="card-footer ">
+    <small class="text-muted">Last updated 3 mins ago</small>
+  </div>
+</div>
+<% end %>
+  </div>
 <!--::blog_part end::-->
 
 

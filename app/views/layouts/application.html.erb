@@ -50,6 +50,7 @@
                       <div class="collapse navbar-collapse main-menu-item justify-content-end"
                           id="navbarSupportedContent">
                           <ul class="navbar-nav align-items-center">
+                          
                               <li class="nav-item active">
                                   <%= link_to 'Home',  root_path, class:'nav-link' %>
                               </li>
@@ -57,9 +58,7 @@
                                 <%= link_to 'Posts',posts_path, class:"nav-link"  %>
                         
                               </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="blog.html">Blog</a>
-                              </li>
+  
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       Pages
@@ -75,11 +74,9 @@
                           <% else %>
                               
                           
-                              <li class="nav-item">
-                                  <a class="nav-link" href="contact.html">Contact</a>
-                              </li>
+            
                               <li class="d-none d-lg-block">
-                              <%= link_to 'Log in',   new_user_session_path, class:'btn_1' %>
+                              <%= link_to 'Log in',   new_user_session_path, class:'' %>
                                   <%= link_to 'Sing up',  new_user_registration_path, class:'btn_1' %>
                               </li>
                               <% end %>
