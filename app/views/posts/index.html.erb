@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container"> <%=search_form_for @search do |f| %>
-                          
+<div class="row "> 
+
+<%= link_to 'New Post', new_post_path, class:'' %>
+<%=search_form_for @search do |f| %>                     
     <div class="input-group">
-    <%= f.text_field :content_or_categories_cont, class:'form-control col-3 border-secondary py-2' %>
+    <%= f.text_field :content_or_categories_cont, class:'form-control ' %>
      <%= f.submit  %> 
 </div>
  <% end %> </div>
 
-  <div class="card-columns">
+  <div class="card-columns mt-2">
   
   <% @posts.each do |post| %> 
   <div class="card">
-  <%= image_tag(post.image , class:'card-img-top') if post.image.attached? %>
+  <%= image_tag(post.image , class:'card-img-top', style: "max-height: 18rem;" ) if post.image.attached? %>
   
   <div class="card-body">
     <h5 class="card-title">Cat:<%= post.categories %></h5>
@@ -33,7 +35,16 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+
 
 
 <%= paginate @posts %>
+
+
+
+
+
+
+
+
+

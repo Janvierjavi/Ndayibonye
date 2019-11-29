@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   def index
     @search = Post.search(params[:q])
     if params[:q]
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+  
   end
 
 
