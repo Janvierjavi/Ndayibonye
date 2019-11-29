@@ -68,3 +68,8 @@ gem 'devise'
 gem 'ransack'
 # pagination
 gem 'kaminari'
+
+
+#rails admin
+
+gem 'rails_admin', '~> 2.0'
