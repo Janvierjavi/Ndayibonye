@@ -1,31 +1,60 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<!-- learning part start-->
+<section class="advance_feature learning_part bob1">
+    <div class="container">
+        <div class="row align-items-sm-center align-items-xl-stretch">
+            <div class="col-md-6 col-lg-6">
+                <div class="learning_member_text">
+               
+                <h2>Wayimboneye online platform post</h2>
+                <%= form_with(model: post, local: true) do |form| %>
+                  <% if post.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+                
+                      <ul>
+                      <% post.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+                  <% if signed_in?  %>
+                  <%= form.hidden_field :user_id, value: current_user.id %>
+                  <%end%>
+                <div class="field">
+                  <h5><%= form.label :image %></h5>
+                  <%= form.file_field :image, class:"single-input"%>
+                </div>
+                  <div class="field mt-30">
+                  <h5 ><%= form.label :tittle %></h5>
+                  <%= form.text_field :tittle, class:"single-input", placeholder:"Message" %>
+                </div>
+                <div class="field mt-30">
+                  <h5 ><%= form.label :content %></h5>
+                  <%= form.text_area :content, class:"single-textarea", placeholder:"Message" %>
+                </div>
+                 
+                  <div class="field single-element-widget mt-30">
+                    <h5><%= form.label :categories, class:'' %></h5>
+                    <%= form.select :categories, ['', 'I.D', 'Driving Lisence', 'Diplome']  %>
+                  </div>
+                
+                  <div class="actions  mt-30" >
+                    <%= form.submit "post", class:"genric-btn success circle" %>
+                  </div>
+                <% end %>
+                
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="learning_img">
+                <%= image_tag("advance_feature_img.png")%>
+                   
+                </div>
+            </div>
+        </div>
     </div>
-  <% end %>
- 
-<div class="field">
-  <%= form.label :image %>
-  <%= form.file_field :image %>
-</div>
-  <div class="field">
-  <%= form.label :content %>
-  <%= form.text_area :content %>
-</div>
- 
-  <div class="field">
-    <%= form.label :categories %>
-    <%= form.select :categories, ['', 'I.D', 'Driving Lisence', 'Diplome' ] %>
-  </div>
+</section>
+<!-- learning part end-->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def show
     @comments = @post.comments
+
     @comment = @post.comments.build
   end
 
@@ -24,10 +25,15 @@ class PostsController < ApplicationController
 
   def edit
   end
+  # def confirm
+  #   @post = Post.new(blog_params)
+  #   @post.user_id = current_user.id
+  #   render :new if @post.invalid?
+  # end
 
   def create
     @post = Post.new(post_params)
-
+    # @post.user_id = current_user.id
       if @post.save
          redirect_to @post, notice: 'Post was successfully created.' 
       else
@@ -55,6 +61,6 @@ class PostsController < ApplicationController
 
     
     def post_params
-      params.require(:post).permit(:tittle, :image, :user_id, :content, :categories)
+      params.require(:post).permit(:tittle, :image, :content, :categories)
     end
 end

@@ -129,5 +129,40 @@ p{padding:10px}
     left:110px;
   }
 
+  .bob{
+    position: relative;
+    bottom: 20rem;
+
+  }
+  .bob1{
+    position: relative;
+    bottom: 10rem;
+
+  }
+  .bob2{
+    position: relative;
+    bottom: 13rem;
+
+  }
+  .bob3{
+    position: relative;
+    bottom: 15rem;
+
+  }
+  .bob4{
+    position: relative;
+    top: 5rem;
+
+  }
+  .bob5{
+    position: relative;
+    bottom: 3rem;
+    left: 65%;
+
+  }
+  .bobshow{
+    position: absolute;
+    top: 100px;
+  }
 
  

@@ -1,31 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row "> 
-
-<%= link_to 'New Post', new_post_path, class:'' %>
+<div class="container"> 
+<% if  signed_in? %>
+<%= link_to 'New Post', new_post_path, class:'btn rounded btn-primary' %>
+<%end%>
+<span class="position-relative">
 <%=search_form_for @search do |f| %>                     
     <div class="input-group">
-    <%= f.text_field :content_or_categories_cont, class:'form-control ' %>
-     <%= f.submit  %> 
+    <%= f.text_field :tittle_or_categories_cont, class:'single-input  col-sm-3', placeholder:"search" %>
+     <%= f.submit "Search" , class:"genric-btn info-border circle" %> 
 </div>
- <% end %> </div>
+ <% end %>
+</span>
+ </div>
 
-  <div class="card-columns mt-2">
+  <div class="card-columns mt-10 container">
   
   <% @posts.each do |post| %> 
   <div class="card">
   <%= image_tag(post.image , class:'card-img-top', style: "max-height: 18rem;" ) if post.image.attached? %>
   
   <div class="card-body">
+  <b> Title: <%= post.tittle %> </b>
     <h5 class="card-title">Cat:<%= post.categories %></h5>
-    <p class="card-text">
-    <%= post.content %> </p>
-                        <%= link_to 'Show', post %>
+                       <%= link_to 'More Details', post %> 
+                        <% if  signed_in? %>
+                        <% if current_user.id == post.id %>
                         <%= link_to 'Edit', edit_post_path(post) %>
                         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                        <%end%>
+                        <%end%>
+                        <small class="text-muted"><%= Comment.where(post_id: post.id).count %>comments</small>
 </div>
   <div class="card-footer ">
-    <small class="text-muted">Last updated 3 mins ago</small>
+    <small class="text-muted">posted by:<%= @user %> at: <%= post.created_at %>
+    <br> From: <%=@user %> more info:<%= @user %>
+    </small>
   </div>
 </div>
 <% end %>

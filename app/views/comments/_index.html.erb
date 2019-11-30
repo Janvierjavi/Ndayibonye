@@ -2,12 +2,14 @@
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
       <li>
-        <p><%= comment.content %></p>
+        <p> <small class="text-muted">commented at: <%= comment.created_at %></small><br><%= comment.content %></p>
       </li>
+      <% if current_user %>
       <%= link_to 'Delete', [comment.post, comment],
                  :method => :delete,
                  data: { confirm: 'Are you sure?' }
                   %>
+                  <% end %>
     <% end %>
   <% end %>
 </ul>

@@ -1,3 +1,17 @@
+
+
+<!-- learning part start-->
+<section class="learning_part bob2">
+    <div class="container">
+        <div class="row align-items-sm-center align-items-lg-stretch">
+            <div class="col-md-7 col-lg-7 bob3">
+                <div class="learning_img">
+                    <%= image_tag("learning_img.png")%>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-5">
+                <div class="learning_member_text">
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -5,29 +19,26 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"single-input"  %>
   </div>
   <div class="field">
   <%= f.label :first_name %><br />
-  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" , class:"single-input"  %>
 </div>
 <div class="field">
     <%= f.label :second_name %><br />
-    <%= f.text_field :second_name, autofocus: true, autocomplete: "second_name" %>
+    <%= f.text_field :second_name, autofocus: true, autocomplete: "second_name" , class:"single-input"  %>
 
   </div>
 
   <div class="field">
     <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+    <%= f.text_field :address, autofocus: true, autocomplete: "address" , class:"single-input" %>
   </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type, autofocus: false, autocomplete: "type" %>
-  </div>
+ 
   <div class="field">
     <%= f.label :tel_phone %><br />
-    <%= f.text_field :tel_phone, autofocus: true, autocomplete: "tel_phone" %>
+    <%= f.text_field :tel_phone, autofocus: true, autocomplete: "tel_phone" , class:"single-input"  %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -36,7 +47,7 @@
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class:"single-input"  %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -45,16 +56,16 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"single-input"  %>
   </div>
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.password_field :current_password, autocomplete: "current-password" , class:"single-input"  %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update" , class:"genric-btn success circle mt-10" %>
   </div>
 <% end %>
 
@@ -62,4 +73,18 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back , class:"genric-btn success " %>
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- learning part end-->
+
+
+
+
+
+

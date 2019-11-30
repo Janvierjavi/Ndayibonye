@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_153243) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.string "tittle"
     t.text "content"
     t.string "categories"
     t.datetime "created_at", null: false

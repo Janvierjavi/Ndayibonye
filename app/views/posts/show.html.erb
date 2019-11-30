@@ -1,15 +1,16 @@
-
-  <p id="notice"><%= notice %></p>
-
-
-  <%= image_tag(@post.image) if @post.image.attached? %>
   
-    <p><strong>Content</strong>：<%= @post.content %></p>
+  <div class="container">
   
-
-  <p>List of Comments(Contents below are important)</p>
-
-  <!-- Get an HTML id of this comments_area and update only the part of that div -->
+  <div class="card mt-20 " style= "max-height: 60rem; width: 30rem; left:20rem;">
+  <%= image_tag(@post.image , class:'card-img-top', style: "max-height: 18rem;" ) if @post.image.attached? %>
+  <div class="card-body">
+    <h5 class="card-title"><p id="notice"><%= notice %></p>
+    <b> Title: <%= @post.tittle %> </b>
+    <br>
+    <small class="text-muted">posted at: <%= @post.created_at %></small>
+    <p><strong>post</strong>：<br><%= @post.content %></p></h5>
+    <p class="card-text">
+    <!-- Get an HTML id of this comments_area and update only the part of that div -->
   <div id="comments_area">
     <!-- Render to display the posted comment list on the blogs detail page -->
     <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
@@ -18,6 +19,15 @@
   <!-- Render to display the comment field on the blogs detail page -->
   <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
 
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Return', posts_path %> | 
+  
  
+</div>
+  <div class="card-footer ">
+  <% if current_user ==  signed_in? %>
+
+  <%= link_to 'Edit', edit_post_path(@post) %>
+  <%end%>
+  </div>
+</div>
+</div>
+
