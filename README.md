@@ -24,7 +24,7 @@
 -	Post list
 -	Edit/delete post
 -	Post search
-     - search by names....etc
+     - search by tittle and categories
 -	Pagination 
 -   User signup functon
 -	Login function 
@@ -60,14 +60,11 @@
 ## Scheduled use Gem
 
 - Devise
-- carrierwave 
-- mini_magick
+-active-storage
 - ransack
 - kaminari
 - bcrypt
 - rspec-rails
-- letter_opener
-- better_errors
 - puma 
 - Active Admin and RailsAdmin
 - comment function
