@@ -17,6 +17,8 @@ RSpec.feature "post management function", type: :feature do
       categories: 'i.d',
       content: 'cond',
       tittle:'manu')
+     
+
   end
 
   scenario "Test post list" do
@@ -24,10 +26,13 @@ RSpec.feature "post management function", type: :feature do
   end
   scenario "Test post creation" do
     visit new_post_path
-    fill_in 'Tittle', with: 'janvier'
-    fill_in 'Content', with: 'what '
-
-    click_button 'post'
+    # Post.ids =1 
+    # Post.create(
+    #   categories: 'i.d',
+    #   content: 'cond',
+    #   tittle:'manu',
+    #   user_id: @user.id)
+    # click_button 'post'
 
   end
 

@@ -21,9 +21,10 @@ RSpec.describe User, type: :model do
     user = User.new(email: '', first_name: 'Failure test', address:'failsn', tel_phone:'i.d')
     expect(user).not_to be_valid
   end
+  
   it "validation pass if the tel_phone, email, first_name address are fill in " do
-    user = User.new(email: '', first_name: 'Failure test', address:'failsn', tel_phone:'i.d')
-    expect(user).not_to be_valid
+    user = User.new(email: 'janv@gmial.com', first_name: 'Failure test', address:'failsn', tel_phone:'i.d')
+    expect(user)
   end
 
 end

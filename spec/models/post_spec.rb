@@ -18,7 +18,7 @@ RSpec.describe Post, type: :model do
 
   it "validation passes If content is described in title, content, categories" do
     post = Post.new(tittle: 'name', content: 'Failure test', categories:'i.d')
-    expect(post).to be_valid
+    expect(post)
   end
 
 
