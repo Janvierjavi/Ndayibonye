@@ -60,7 +60,7 @@
 ## Scheduled use Gem
 
 - Devise
--active-storage
+- active-storage
 - ransack
 - kaminari
 - bcrypt
