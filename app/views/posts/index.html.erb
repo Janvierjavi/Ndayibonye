@@ -23,18 +23,16 @@
   <div class="card-body">
   <b> Title: <%= post.tittle %> </b>
     <h5 class="card-title">Cat:<%= post.categories %></h5>
-                       <%= link_to 'More Details', post %> 
-                        <% if  signed_in? %>
-                        <% if current_user.id == post.id %>
+                       <%= link_to 'More Details', post %>      
+                        <% if user_signed_in? && current_user.id == post.user_id %>
                         <%= link_to 'Edit', edit_post_path(post) %>
                         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
                         <%end%>
-                        <%end%>
+                      
                         <small class="text-muted"><%= Comment.where(post_id: post.id).count %>comments</small>
 </div>
   <div class="card-footer ">
-    <small class="text-muted">posted by:<%= @user %> at: <%= post.created_at %>
-    <br> From: <%=@user %> more info:<%= @user %>
+    <small class="text-muted">posted at: <%= post.created_at %>
     </small>
   </div>
 </div>

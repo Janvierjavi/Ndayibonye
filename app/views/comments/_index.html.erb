@@ -4,12 +4,14 @@
       <li>
         <p> <small class="text-muted">commented at: <%= comment.created_at %></small><br><%= comment.content %></p>
       </li>
-      <% if current_user %>
+      <% if user_signed_in? && current_user.id == post.user_id %>
       <%= link_to 'Delete', [comment.post, comment],
                  :method => :delete,
                  data: { confirm: 'Are you sure?' }
-                  %>
+                  %>| 
                   <% end %>
     <% end %>
   <% end %>
+
 </ul>
+

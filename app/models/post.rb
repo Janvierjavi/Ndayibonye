@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     validates :categories, presence: true
     validates :image, presence: true
     validates :tittle, presence: true
-    # belongs_to :user
+    belongs_to :user
 
     
 end

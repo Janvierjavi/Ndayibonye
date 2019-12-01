@@ -19,7 +19,7 @@
                       </ul>
                     </div>
                   <% end %>
-                  <% if signed_in?  %>
+                  <% if user_signed_in?  %>
                   <%= form.hidden_field :user_id, value: current_user.id %>
                   <%end%>
                 <div class="field">
