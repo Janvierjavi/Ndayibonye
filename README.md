@@ -64,6 +64,7 @@
 - ransack
 - kaminari
 - bcrypt
+- kaminari:views bootstrap
 - rspec-rails
 - puma 
 - Active Admin and RailsAdmin

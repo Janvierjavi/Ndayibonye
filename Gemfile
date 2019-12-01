@@ -75,6 +75,7 @@ gem 'devise'
 gem 'ransack'
 # pagination
 gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 
 #rails admin
