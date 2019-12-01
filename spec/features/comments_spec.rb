@@ -24,15 +24,7 @@ RSpec.feature "comment management function", type: :feature do
       visit new_post_path
       fill_in 'Tittle', with: 'janvier'
     fill_in 'Content', with: 'what '
-    click_button 'post'
-    fill_in 'Content',  with:'name'
     visit posts_path
-  end
-  scenario "test  of create new post from show link" do
-    visit posts_path
-  click_link 'More Details'
-  fill_in 'Content',  with:'name'
-  visit posts_path
   end
 
 end
