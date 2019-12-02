@@ -26,13 +26,11 @@ RSpec.feature "post management function", type: :feature do
   end
   scenario "Test post creation" do
     visit new_post_path
-    # Post.ids =1 
-    # Post.create(
-    #   categories: 'i.d',
-    #   content: 'cond',
-    #   tittle:'manu',
-    #   user_id: @user.id)
-    # click_button 'post'
+    Post.create(
+      categories: 'i.d',
+      content: 'cond',
+      tittle:'manu',
+      user_id: @user.id)
 
   end
 

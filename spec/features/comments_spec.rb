@@ -26,5 +26,15 @@ RSpec.feature "comment management function", type: :feature do
     fill_in 'Content', with: 'what '
     visit posts_path
   end
+  scenario "Test of first create new post and add the new post" do
+    visit new_post_path
+    Post.create(
+      categories: 'i.d',
+      content: 'cond',
+      tittle:'manu',
+      user_id: @user.id)
+      fill_in 'Content', with: 'what '
+      visit posts_path
+  end
 
 end
