@@ -3,6 +3,9 @@
 <div class="container"> 
 <% if  signed_in? %>
 <%= link_to 'New Post', new_post_path, class:'btn rounded btn-primary' %>
+<% if  current_user.admin == true %>
+<%= link_to 'Admin_Dashboard',  rails_admin.dashboard_path, class:'btn rounded btn-primary' %>
+<%end%>
 <%end%>
 <span class="position-relative">
 <%=search_form_for @search do |f| %>                     
@@ -15,7 +18,6 @@
  </div>
 
   <div class="card-columns mt-10 container">
-  
   <% @posts.each do |post| %> 
   <div class="card">
   <%= image_tag(post.image , class:'card-img-top', style: "max-height: 18rem;" ) if post.image.attached? %>
