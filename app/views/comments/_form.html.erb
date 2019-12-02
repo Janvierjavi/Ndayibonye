@@ -1,25 +1,6 @@
-<%= form_with(model: [post, comment]) do |form| %>
-    <% if comment.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-        <ul>
-        <% comment.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-  
-    <div class="field">
-      <%= form.label :content %>
-      <%= form.text_area :content %>
-    </div>
-  
-    <div class="actions">
-      <%= form.submit "post comment" %>
-    </div> <%= link_to 'Return to posts', posts_path, class:'mt-10 genric-btn success circle'%>
-  <% end %>
+<%= form_for ([@post, @post.comments.build]) do |f| %>
 
+<%= f.text_area :content, class:"single-input", placeholder:"enter comment"%>
+<%= f.submit "post comment", class:"genric-btn info-border circle" %>
 
-
-  
+  <%end%>

@@ -34,7 +34,7 @@
                         <small class="text-muted"><%= Comment.where(post_id: post.id).count %>comments</small>
 </div>
   <div class="card-footer ">
-    <small class="text-muted">posted at: <%= post.created_at %> 
+    <small class="text-muted">posted at: <%= time_ago_in_words(post.created_at) %> 
 
     </small>
   </div>

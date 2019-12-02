@@ -9,7 +9,13 @@
 
 
 
-User.create!(first_name: 'janvier',address:'kabuga', tel_phone:'23456',email: 'janvier1j@wayimboneye.dive', password: '123456', password_confirmation: '123456', admin: true )
+User.create!(first_name: 'janvier'
+,address:'kabuga',
+ tel_phone:'23456',
+ email: 'janvier1j@wayimboneye.dive', 
+ password: '123456', 
+ password_confirmation: '123456', 
+ admin: true )
 User.create!(first_name: 'mutu',address:'kabuga',tel_phone:'23456', email: 'mutuyimanaj@dive.com', password: '098765', password_confirmation: '098765' )
 User.create!(first_name: 'janvier', address:'kabuga',tel_phone:'23456',email: 'janvier@dive.com', password: '3456789', password_confirmation: '3456789' )
 User.create!(first_name: 'mutuyimana',address:'kabuga',tel_phone:'23456', email: 'mutuyimana1@dive.com', password: 'qwertyui', password_confirmation: 'qwertyui' )

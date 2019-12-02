@@ -12,17 +12,11 @@
     <p><strong>post</strong>：<br><%= @post.content %></p></h5>
     <p class="card-text">
     <!-- Get an HTML id of this comments_area and update only the part of that div -->
-  <div id="comments_area">
-    <!-- Render to display the posted comment list on the blogs detail page -->
-    <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
   
+<%= render 'comments/comment' %>
 
-  <!-- Render to display the comment field on the blogs detail page -->
-  <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
 
-  
- 
-</div>
+
   <div class="card-footer ">
   <% if current_user ==  signed_in? %>
 
