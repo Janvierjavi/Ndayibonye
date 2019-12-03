@@ -9,7 +9,7 @@ def create
 if @comment.save
   redirect_to post_path(@post)
 else
-  redirect_to post_path(@post)
+  redirect_to post_path(@post), notice: 'Post failed pls post some thing'
 end
 end
 
